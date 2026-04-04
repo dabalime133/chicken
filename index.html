@@ -396,7 +396,7 @@
 
     <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
       <button id="open-lang-modal" class="flex items-center gap-2 text-gray-400 hover:text-gold font-body text-sm transition-colors py-1.5 px-2 md:py-2 md:px-3 border border-gray-800 rounded-lg bg-gray-900/50 cursor-pointer">
-        <span id="current-lang-flag" class="text-base md:text-lg leading-none drop-shadow-md">🇷🇺</span> 
+        <img id="current-lang-flag" src="https://hatscripts.github.io/circle-flags/flags/ru.svg" class="w-5 h-5 md:w-6 md:h-6" alt="Flag">
         <span id="current-lang-display" class="uppercase font-semibold text-xs md:text-sm">RU</span>
       </button>
 
@@ -1058,32 +1058,32 @@
 
     <h3 class="font-impact text-2xl text-center mb-6 text-white tracking-widest" data-i18n="modal_title">ВЫБЕРИТЕ ЯЗЫК</h3>
 
-    <div class="grid grid-cols-2 gap-3">
-      <button onclick="selectLang('ru', '🇷🇺')" class="flex items-center gap-3 p-3 rounded-xl border border-gray-700 bg-gray-900/50 hover:border-gold hover:bg-yellow-500/10 transition-all text-left cursor-pointer">
-        <span class="text-2xl drop-shadow-md">🇷🇺</span>
-        <span class="font-body text-gray-300 font-semibold text-sm">Русский</span>
-      </button>
-      
-<button onclick="selectLang('en', '🇬🇧')" class="flex items-center gap-3 p-3 rounded-xl border border-gray-700 bg-gray-900/50 hover:border-gold hover:bg-yellow-500/10 transition-all text-left cursor-pointer">
-        <span class="text-2xl drop-shadow-md">🇬🇧</span>
-        <span class="font-body text-gray-300 font-semibold text-sm">English</span>
-      </button>
+    <div class="p-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <button onclick="selectLang('ru', 'https://hatscripts.github.io/circle-flags/flags/ru.svg')" class="flex items-center gap-3 p-3 rounded-xl border border-gray-700 bg-gray-900/50 hover:border-gold hover:bg-yellow-500/10 transition-all text-left cursor-pointer">
+    <img src="https://hatscripts.github.io/circle-flags/flags/ru.svg" class="w-8 h-8" alt="RU">
+    <span class="font-body text-gray-300 font-semibold text-sm">Русский</span>
+  </button>
 
-      <button onclick="selectLang('es', '🇪🇸')" class="flex items-center gap-3 p-3 rounded-xl border border-gray-700 bg-gray-900/50 hover:border-gold hover:bg-yellow-500/10 transition-all text-left cursor-pointer">
-        <span class="text-2xl drop-shadow-md">🇪🇸</span>
-        <span class="font-body text-gray-300 font-semibold text-sm">Español</span>
-      </button>
+  <button onclick="selectLang('en', 'https://hatscripts.github.io/circle-flags/flags/gb.svg')" class="flex items-center gap-3 p-3 rounded-xl border border-gray-700 bg-gray-900/50 hover:border-gold hover:bg-yellow-500/10 transition-all text-left cursor-pointer">
+    <img src="https://hatscripts.github.io/circle-flags/flags/gb.svg" class="w-8 h-8" alt="EN">
+    <span class="font-body text-gray-300 font-semibold text-sm">English</span>
+  </button>
 
-      <button onclick="selectLang('it', '🇮🇹')" class="flex items-center gap-3 p-3 rounded-xl border border-gray-700 bg-gray-900/50 hover:border-gold hover:bg-yellow-500/10 transition-all text-left cursor-pointer">
-        <span class="text-2xl drop-shadow-md">🇮🇹</span>
-        <span class="font-body text-gray-300 font-semibold text-sm">Italiano</span>
-      </button>
+  <button onclick="selectLang('es', 'https://hatscripts.github.io/circle-flags/flags/es.svg')" class="flex items-center gap-3 p-3 rounded-xl border border-gray-700 bg-gray-900/50 hover:border-gold hover:bg-yellow-500/10 transition-all text-left cursor-pointer">
+    <img src="https://hatscripts.github.io/circle-flags/flags/es.svg" class="w-8 h-8" alt="ES">
+    <span class="font-body text-gray-300 font-semibold text-sm">Español</span>
+  </button>
 
-      <button onclick="selectLang('fr', '🇫🇷')" class="flex items-center gap-3 p-3 rounded-xl border border-gray-700 bg-gray-900/50 hover:border-gold hover:bg-yellow-500/10 transition-all text-left cursor-pointer">
-        <span class="text-2xl drop-shadow-md">🇫🇷</span>
-        <span class="font-body text-gray-300 font-semibold text-sm">Français</span>
-      </button>
-    </div>
+  <button onclick="selectLang('it', 'https://hatscripts.github.io/circle-flags/flags/it.svg')" class="flex items-center gap-3 p-3 rounded-xl border border-gray-700 bg-gray-900/50 hover:border-gold hover:bg-yellow-500/10 transition-all text-left cursor-pointer">
+    <img src="https://hatscripts.github.io/circle-flags/flags/it.svg" class="w-8 h-8" alt="IT">
+    <span class="font-body text-gray-300 font-semibold text-sm">Italiano</span>
+  </button>
+
+  <button onclick="selectLang('fr', 'https://hatscripts.github.io/circle-flags/flags/fr.svg')" class="flex items-center gap-3 p-3 rounded-xl border border-gray-700 bg-gray-900/50 hover:border-gold hover:bg-yellow-500/10 transition-all text-left cursor-pointer">
+    <img src="https://hatscripts.github.io/circle-flags/flags/fr.svg" class="w-8 h-8" alt="FR">
+    <span class="font-body text-gray-300 font-semibold text-sm">Français</span>
+  </button>
+</div>
   </div>
 </div>
 
@@ -1449,11 +1449,12 @@
     }
   });
 
-  function selectLang(lang, flag) {
-    switchLang(lang);
-    document.getElementById('current-lang-flag').textContent = flag;
-    langModal.classList.add('hidden');
-  }
+ function selectLang(lang, flagUrl) {
+  switchLang(lang);
+  // Теперь меняем src у картинки, а не текст
+  document.getElementById('current-lang-flag').src = flagUrl;
+  langModal.classList.add('hidden');
+}
 
   // ---- Copy Promo Code ----
   function copyPromo() {
