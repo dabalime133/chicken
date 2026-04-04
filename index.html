@@ -1064,10 +1064,11 @@
         <span class="font-body text-gray-300 font-semibold text-sm">Русский</span>
       </button>
 
-      <button onclick="selectLang('en', '🇬🇧')" class="flex items-center gap-3 p-3 rounded-xl border border-gray-700 bg-gray-900/50 hover:border-gold hover:bg-yellow-500/10 transition-all text-left cursor-pointer">
-        <span class="text-2xl drop-shadow-md">🇬🇧</span>
-        <span class="font-body text-gray-300 font-semibold text-sm">English</span>
-      </button>
+      <div class="p-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+  <button onclick="selectLang('en', 'https://flagcdn.com/w40/gb.png')" class="flex items-center gap-3 p-3 rounded-xl border border-gray-700 bg-gray-900/50 hover:border-gold hover:bg-yellow-500/10 transition-all text-left cursor-pointer">
+    <img src="https://flagcdn.com/w40/gb.png" class="w-6 h-4 object-cover rounded-sm shadow-sm" alt="EN">
+    <span class="font-body text-gray-300 font-semibold text-sm">English</span>
+  </button>
 
       <button onclick="selectLang('es', '🇪🇸')" class="flex items-center gap-3 p-3 rounded-xl border border-gray-700 bg-gray-900/50 hover:border-gold hover:bg-yellow-500/10 transition-all text-left cursor-pointer">
         <span class="text-2xl drop-shadow-md">🇪🇸</span>
