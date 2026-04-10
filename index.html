@@ -376,6 +376,43 @@
       border-color: rgba(245,200,66,0.5);
       box-shadow: 0 0 20px rgba(245,200,66,0.1);
     }
+    /* Liquid Gold Partner Button */
+.liquid-gold-link {
+  position: relative;
+  background: linear-gradient(135deg, rgba(245,200,66,0.1), rgba(245,200,66,0.02));
+  border: 1px solid rgba(245,200,66,0.4);
+  color: var(--gold);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(245,200,66,0.05), inset 0 0 10px rgba(245,200,66,0.05);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.liquid-gold-link::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(245,200,66,0.4), transparent);
+  transform: skewX(-25deg);
+  transition: all 0.5s ease;
+}
+
+.liquid-gold-link:hover {
+  background: linear-gradient(135deg, #F5C842, #ffda6a);
+  color: #080808;
+  border-color: #F5C842;
+  box-shadow: 0 0 20px rgba(245,200,66,0.4), 0 0 40px rgba(245,200,66,0.2);
+  transform: translateY(-2px);
+}
+
+.liquid-gold-link:hover::before {
+  left: 200%;
+}
+
+.liquid-gold-link:active {
+  transform: translateY(0) scale(0.98);
+}
   </style>
 </head>
 <body class="grid-bg">
@@ -397,7 +434,11 @@
       <a href="#demo" class="px-3 py-2 text-gray-400 hover:text-gold font-body text-sm transition-colors" data-i18n="nav_demo">Демо</a>
       <a href="#faq" class="px-3 py-2 text-gray-400 hover:text-gold font-body text-sm transition-colors">FAQ</a>
     </nav>
-
+<a href="https://minespromo.top" target="_blank" rel="noopener" title="Лучшие стратегии и промокоды EzMines"
+   class="liquid-gold-link hidden md:flex items-center gap-2 px-3 py-2 rounded-lg font-impact text-sm md:text-base tracking-widest uppercase">
+  <span class="text-lg leading-none">💣</span>
+  <span>MINES PROMO</span>
+</a>
     <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
       <button id="open-lang-modal" class="flex items-center gap-2 text-gray-400 hover:text-gold font-body text-sm transition-colors py-1.5 px-2 md:py-2 md:px-3 border border-gray-800 rounded-lg bg-gray-900/50 cursor-pointer">
         <img id="current-lang-flag" src="https://hatscripts.github.io/circle-flags/flags/ru.svg" class="w-5 h-5 md:w-6 md:h-6" alt="Flag">
@@ -1010,6 +1051,14 @@
       </div>
       <div>
         <div class="font-impact text-white text-base md:text-lg mb-3 md:mb-4 tracking-wider" data-i18n="foot_nav_title">НАВИГАЦИЯ</div>
+        <div class="mt-6 md:mt-8">
+  <div class="font-impact text-gray-500 text-xs md:text-sm mb-2 tracking-wider">// ПАРТНЕРСКИЕ ПРОЕКТЫ</div>
+  <a href="https://minespromo.top" target="_blank" rel="noopener" title="EzMines промокоды и симулятор" 
+     class="inline-flex items-center gap-2 group transition-colors">
+    <span class="w-2 h-2 rounded-full bg-gold/50 group-hover:bg-gold group-hover:shadow-[0_0_8px_#F5C842] transition-all"></span>
+    <span class="font-body text-gray-400 group-hover:text-gold text-xs md:text-sm transition-colors">MinesPromo (EzMines)</span>
+  </a>
+</div>
         <div class="space-y-2">
           <a href="#rules" class="block font-body text-gray-500 hover:text-gold text-xs md:text-sm transition-colors" data-i18n="foot_nav1">Правила игры</a>
           <a href="#tactics" class="block font-body text-gray-500 hover:text-gold text-xs md:text-sm transition-colors" data-i18n="foot_nav2">Стратегии 2026</a>
@@ -1042,6 +1091,7 @@
       </div>
     </div>
   </div>
+  
 </footer>
 
 <div class="sticky-cta md:hidden" aria-hidden="true">
